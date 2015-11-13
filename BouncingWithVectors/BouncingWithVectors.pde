@@ -14,7 +14,8 @@ class Ball{
   Ball(){
     //initialize variables
     pos = new PVector(random(width), random(height));
-    vel = new PVector(random(-5, 5), random(-5, 5));
+    vel = PVector.random2D();
+    vel.mult(5);
     
     diam = random(10, 90);
     hue = random(255);
