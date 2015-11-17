@@ -35,7 +35,7 @@ void draw(){
     
     fill(random(100), 255, 255);
     
-    switch((int)random(50)){
+    switch((int)random(20)){
       case 0: text("much wow",          random(width), random(height)); break;
       case 1: text("many centipde",     random(width), random(height)); break;
       case 2: text("great amaze",       random(width), random(height)); break;
