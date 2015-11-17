@@ -3,6 +3,8 @@ float air_resistance = 0.99;
 
 int bnum = 50;
 
+int frame_rate = 60;
+
 //declare a class which contains the ball variables
 class Ball{
   PVector pos;
@@ -25,8 +27,8 @@ class Ball{
     //bounce off of other balls
     for(Ball ball : balls){
       if(ball != this && dist(pos.x, pos.y, ball.pos.x, ball.pos.y) < diam/2 + ball.diam/2){
-        pos.x += ((ball.diam + diam)/2) * ((pos.x - ball.pos.x)/dist(pos.x, pos.y, ball.pos.x, ball.pos.y)*0.25);
-        pos.y += ((ball.diam + diam)/2) * ((pos.y - ball.pos.y)/dist(pos.x, pos.y, ball.pos.x, ball.pos.y)*0.25);
+        pos.x += ((diam)) * ((pos.x - ball.pos.x)/dist(pos.x, pos.y, ball.pos.x, ball.pos.y) * 0.1);
+        pos.y += ((diam)) * ((pos.y - ball.pos.y)/dist(pos.x, pos.y, ball.pos.x, ball.pos.y) * 0.1);
         vel.x *= -air_resistance;
         vel.y *= -air_resistance;
       }  
@@ -76,6 +78,8 @@ class Ball{
 Ball[] balls = new Ball[bnum];
 
 void setup() {
+  
+  frameRate(frame_rate);
   
   colorMode(HSB, 255);
   
